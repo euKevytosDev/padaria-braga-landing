@@ -695,15 +695,89 @@ body {
 .avaliacoes__subtitulo {
   text-align: center;
   color: var(--cor-texto-suave);
-  margin: -0.5rem auto var(--espaco-lg);
+  margin: -0.5rem auto var(--espaco-md);
   max-width: 44ch;
+}
+
+/* Resumo de nota estilo Google */
+.avaliacoes__resumo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaco-md);
+  max-width: 420px;
+  margin: 0 auto var(--espaco-lg);
+  padding: var(--espaco-md) var(--espaco-lg);
+  background: var(--cor-creme);
+  border: 1px solid var(--cor-dourado-borda);
+  border-radius: var(--raio-md);
+  box-shadow: var(--sombra-suave);
+}
+
+.avaliacoes__nota {
+  font-family: var(--fonte-titulo);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--cor-vermelho);
+}
+
+.avaliacoes__resumo-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Barra de estrelas: base cinza + preenchimento dourado por cima (largura via JS) */
+.avaliacoes__estrelas-resumo {
+  position: relative;
+  display: inline-block;
+  font-size: 1.35rem;
+  line-height: 1;
+  letter-spacing: 3px;
+}
+
+.avaliacoes__estrelas-base {
+  color: #dcd3c7;
+}
+
+.avaliacoes__estrelas-preenchidas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 88%;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #f5b400;
+}
+
+.avaliacoes__total {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+}
+
+.avaliacoes__google {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 600;
+  color: var(--cor-texto);
+}
+
+.avaliacoes__google svg {
+  width: 15px;
+  height: 15px;
 }
 
 .avaliacoes__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--espaco-md);
-  max-width: var(--largura-max);
+  max-width: 820px;
   margin: 0 auto;
 }
 
@@ -808,7 +882,7 @@ body {
 .avaliacao-card__texto {
   color: var(--cor-texto-suave);
   line-height: 1.7;
-  font-style: italic;
+  
 }
 
 @media (min-width: 600px) {
@@ -819,7 +893,7 @@ body {
 
 @media (min-width: 900px) {
   .avaliacoes__grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

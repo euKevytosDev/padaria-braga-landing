@@ -157,6 +157,19 @@ function preencherExperiencias() {
 
 // ─── Monta as avaliações estilo Google ────────────────
 function preencherAvaliacoes() {
+  // Cabeçalho de nota estilo Google (4,4 · 468 avaliações)
+  const resumo = PADARIA.avaliacaoResumo;
+  if (resumo) {
+    const elNota = document.getElementById("resumo-nota");
+    const elTotal = document.getElementById("resumo-total");
+    const elEstrelas = document.getElementById("resumo-estrelas");
+    if (elNota && resumo.nota != null) elNota.textContent = resumo.nota;
+    if (elTotal && resumo.total != null) elTotal.textContent = resumo.total;
+    if (elEstrelas && resumo.notaDecimal) {
+      elEstrelas.style.width = (resumo.notaDecimal / 5) * 100 + "%";
+    }
+  }
+
   const grid = document.getElementById("grid-avaliacoes");
   if (!grid || !PADARIA.avaliacoes) return;
 
@@ -180,20 +193,30 @@ function preencherAvaliacoes() {
     const avatar = document.createElement("div");
     avatar.className = "avaliacao-card__avatar";
 
-    const foto = document.createElement("img");
-    foto.className = "avaliacao-card__foto";
-    foto.src = av.foto;
-    foto.alt = `Foto de ${av.nome}`;
-    foto.loading = "lazy";
-    // Se a foto falhar, mostra a inicial do nome
-    foto.onerror = () => {
-      foto.remove();
+    // Cria um avatar de letra (inicial do nome) num círculo colorido
+    const criarInicial = () => {
       const inicial = document.createElement("span");
       inicial.className = "avaliacao-card__inicial";
       inicial.textContent = (av.nome || "?").charAt(0).toUpperCase();
-      avatar.appendChild(inicial);
+      if (av.cor) inicial.style.background = av.cor;
+      return inicial;
     };
-    avatar.appendChild(foto);
+
+    // Com foto: usa a imagem (com fallback pra inicial). Sem foto: avatar de letra.
+    if (av.foto) {
+      const foto = document.createElement("img");
+      foto.className = "avaliacao-card__foto";
+      foto.src = av.foto;
+      foto.alt = `Foto de ${av.nome}`;
+      foto.loading = "lazy";
+      foto.onerror = () => {
+        foto.remove();
+        avatar.appendChild(criarInicial());
+      };
+      avatar.appendChild(foto);
+    } else {
+      avatar.appendChild(criarInicial());
+    }
 
     // Selo "G" do Google no canto do avatar
     const selo = document.createElement("span");
