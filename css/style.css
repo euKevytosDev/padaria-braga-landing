@@ -1,0 +1,744 @@
+/*
+  style.css — estilos principais da Padaria Braga
+  Abordagem: mobile-first (estilos base para celular, media queries para telas maiores)
+  Padrões reutilizados do projeto de casamento: overlay no hero, animação revelar-scroll
+*/
+
+/* ─── Base ─────────────────────────────────────────── */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-texto);
+  color: var(--cor-texto);
+  background-color: var(--cor-creme);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─── Cabeçalho ────────────────────────────────────── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--cor-creme);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.header__inner {
+  background-color: var(--cor-creme);
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: var(--espaco-xs) var(--espaco-sm);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-xs);
+}
+
+/* Menu hambúrguer — só aparece no mobile */
+.header__menu-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  flex-shrink: 0;
+}
+
+.header__menu-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--cor-marrom);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Estado aberto do menu mobile */
+.header__menu-btn--aberto span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.header__menu-btn--aberto span:nth-child(2) {
+  opacity: 0;
+}
+.header__menu-btn--aberto span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile: menu escondido até clicar no hambúrguer */
+.header__nav {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espaco-md);
+  width: 100%;
+  padding: var(--espaco-sm) 0 var(--espaco-md);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.header__nav--aberto {
+  display: flex;
+}
+
+.header__grupo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espaco-sm);
+}
+
+.header__link {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cor-marrom-claro);
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.header__link:hover,
+.header__link--ativo {
+  color: var(--cor-dourado);
+  border-bottom-color: var(--cor-dourado);
+}
+
+.header__logo {
+  flex-shrink: 0;
+}
+
+.header__logo img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Desktop: uma linha — [Início Quem somos]  LOGO  [Produtos Fale conosco] */
+@media (min-width: 768px) {
+  .header__inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: var(--espaco-sm) var(--espaco-md);
+    gap: var(--espaco-md);
+  }
+
+  .header__menu-btn {
+    display: none;
+  }
+
+  .header__logo {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+    z-index: 2;
+  }
+
+  .header__logo img {
+    width: 88px;
+    height: 88px;
+  }
+
+  /* Nav ocupa a linha inteira; os grupos ficam nas pontas */
+  .header__nav {
+    display: flex;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    border-top: none;
+    z-index: 1;
+  }
+
+  .header__grupo {
+    flex-direction: row;
+    gap: var(--espaco-lg);
+  }
+
+  .header__grupo--esquerda {
+    justify-content: flex-end;
+  }
+
+  .header__grupo--direita {
+    justify-content: flex-start;
+  }
+}
+
+/* ─── Hero ─────────────────────────────────────────── */
+/*
+  Imagem cobre a seção inteira (background-size: cover).
+  O gradiente escurece só o lado esquerdo para o texto legível.
+  Assim não sobra faixa marrom embaixo da foto.
+*/
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: clamp(22rem, 68vh, 34rem);
+  background-color: var(--cor-marrom);
+  background-image: var(--hero-bg, none);
+  background-size: cover;
+  background-position: 72% center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    105deg,
+    rgba(45, 26, 15, 0.96) 0%,
+    rgba(45, 26, 15, 0.9) 32%,
+    rgba(45, 26, 15, 0.55) 48%,
+    rgba(45, 26, 15, 0.15) 62%,
+    transparent 78%
+  );
+}
+
+.hero__conteudo {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 34rem;
+  padding: var(--espaco-xl) var(--espaco-md);
+  margin-left: clamp(0.5rem, 4vw, 3.5rem);
+  color: var(--cor-texto-claro);
+}
+
+.hero__etiqueta {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cor-dourado-claro);
+  margin-bottom: var(--espaco-xs);
+}
+
+.hero__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2.2rem, 8vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: var(--espaco-sm);
+}
+
+.hero__slogan {
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  font-weight: 300;
+  max-width: 28ch;
+  margin-bottom: var(--espaco-lg);
+  opacity: 0.9;
+}
+
+/* Botão dourado do hero */
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  align-self: flex-start;
+  padding: 0.85rem 1.5rem;
+  background: var(--cor-dourado);
+  color: var(--cor-preta);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--raio-pill);
+  box-shadow: var(--sombra-botao);
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.hero__cta svg {
+  width: 20px;
+  height: 20px;
+}
+
+.hero__cta:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+/* Mobile: overlay mais forte para ler o texto sobre a foto */
+@media (max-width: 767px) {
+  .hero {
+    background-position: center;
+    min-height: clamp(24rem, 78vh, 32rem);
+  }
+
+  .hero__overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(45, 26, 15, 0.55) 0%,
+      rgba(45, 26, 15, 0.88) 55%,
+      rgba(45, 26, 15, 0.94) 100%
+    );
+  }
+
+  .hero__conteudo {
+    margin-left: 0;
+    max-width: none;
+    padding: var(--espaco-lg) var(--espaco-md);
+  }
+}
+
+/* ─── Barra de categorias ──────────────────────────── */
+.categorias {
+  background: var(--cor-marrom);
+  padding: var(--espaco-sm) 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.categorias__lista {
+  display: flex;
+  gap: var(--espaco-xs);
+  padding: 0 var(--espaco-sm);
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  list-style: none;
+  width: max-content;
+  min-width: 100%;
+  justify-content: center;
+}
+
+.categorias__item {
+  flex-shrink: 0;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--cor-dourado);
+  border-radius: var(--raio-sm);
+  color: var(--cor-dourado-claro);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2s;
+}
+
+.categorias__item:hover {
+  background: var(--cor-dourado);
+  color: var(--cor-preta);
+}
+
+/* ─── Tipografia de seções (reutilizável) ──────────── */
+.secao__etiqueta {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cor-dourado);
+  margin-bottom: var(--espaco-xs);
+}
+
+.secao__etiqueta--centro {
+  text-align: center;
+}
+
+.secao__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  color: var(--cor-marrom);
+  margin-bottom: var(--espaco-md);
+}
+
+.secao__titulo--centro {
+  text-align: center;
+}
+
+/* ─── Quem somos ───────────────────────────────────── */
+.sobre {
+  padding: var(--espaco-xl) var(--espaco-md);
+  background: var(--cor-branco);
+}
+
+.sobre__inner {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  display: grid;
+  gap: var(--espaco-lg);
+}
+
+.sobre__paragrafo {
+  font-size: 1rem;
+  color: var(--cor-marrom-claro);
+  max-width: 55ch;
+}
+
+.sobre__destaque {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espaco-md);
+  padding: var(--espaco-lg);
+  background: var(--cor-creme);
+  border-radius: var(--raio-md);
+  border: 1px solid rgba(212, 160, 60, 0.25);
+}
+
+.sobre__logo {
+  width: 140px;
+  border-radius: 50%;
+  box-shadow: var(--sombra-suave);
+}
+
+.sobre__lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-sm);
+  width: 100%;
+}
+
+/* Cada item é uma "pílula" branca com ícone em círculo dourado */
+.sobre__item {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-sm);
+  padding: 0.7rem 1rem;
+  background: var(--cor-branco);
+  border-radius: var(--raio-md);
+  box-shadow: 0 2px 10px rgba(61, 35, 20, 0.06);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--cor-marrom);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sobre__item-icone {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--cor-dourado-claro), var(--cor-dourado));
+  color: var(--cor-preta);
+}
+
+.sobre__item-icone svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Hover só no desktop — item desliza levemente e ganha sombra */
+@media (hover: hover) {
+  .sobre__item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 20px rgba(61, 35, 20, 0.12);
+  }
+}
+
+@media (min-width: 768px) {
+  .sobre__inner {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+  }
+}
+
+/* ─── Produtos ─────────────────────────────────────── */
+.produtos {
+  padding: var(--espaco-xl) var(--espaco-md);
+  background: var(--cor-creme);
+}
+
+.produtos__subtitulo {
+  text-align: center;
+  color: var(--cor-marrom-claro);
+  margin: -0.5rem auto var(--espaco-lg);
+  max-width: 40ch;
+}
+
+.produtos__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--espaco-md);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Card de produto — bolinha inteira cresce + sombra; nome acompanha */
+.produto-card {
+  text-align: center;
+  cursor: default;
+  padding: var(--espaco-xs);
+  overflow: visible;
+}
+
+.produto-card__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.45s cubic-bezier(0.34, 1.15, 0.64, 1);
+}
+
+.produto-card__circulo {
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1;
+  margin: 0 auto var(--espaco-sm);
+  border-radius: 50%;
+  border: 4px solid var(--cor-branco);
+  box-shadow: var(--sombra-suave);
+  transform: scale(1);
+  transition:
+    transform 0.45s cubic-bezier(0.34, 1.15, 0.64, 1),
+    box-shadow 0.45s ease;
+}
+
+.produto-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: linear-gradient(145deg, var(--cor-dourado-claro), var(--cor-marrom-claro));
+}
+
+/* Fallback quando a imagem ainda não existe */
+.produto-card__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+.produto-card__nome {
+  font-family: var(--fonte-titulo);
+  font-size: 1rem;
+  color: var(--cor-marrom);
+  transition: color 0.35s ease;
+}
+
+/* Hover: bolinha cresce, sombra forte, bloco inteiro sobe um pouco */
+@media (hover: hover) {
+  .produto-card:hover .produto-card__inner {
+    transform: translateY(-8px);
+  }
+
+  .produto-card:hover .produto-card__circulo {
+    transform: scale(1.08);
+    box-shadow:
+      0 18px 42px rgba(61, 35, 20, 0.28),
+      0 8px 20px rgba(212, 160, 60, 0.18);
+  }
+
+  .produto-card:hover .produto-card__nome {
+    color: var(--cor-dourado);
+  }
+}
+
+@media (min-width: 600px) {
+  .produtos__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ─── Experiência na padaria ───────────────────────── */
+.experiencia {
+  padding: var(--espaco-xl) var(--espaco-md);
+  background: var(--cor-branco);
+}
+
+.experiencia__subtitulo {
+  text-align: center;
+  color: var(--cor-marrom-claro);
+  margin: -0.5rem auto var(--espaco-lg);
+  max-width: 42ch;
+}
+
+/* Mobile: 1 coluna. Cresce para 2 e depois 4 colunas em telas maiores. */
+.experiencia__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-md);
+  max-width: var(--largura-max);
+  margin: 0 auto;
+}
+
+.experiencia-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--espaco-lg) var(--espaco-md);
+  background: var(--cor-creme);
+  border: 1px solid rgba(212, 160, 60, 0.25);
+  border-radius: var(--raio-md);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.experiencia-card__icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--espaco-sm);
+  font-size: 2rem;
+  background: var(--cor-branco);
+  border-radius: 50%;
+  box-shadow: var(--sombra-suave);
+}
+
+.experiencia-card__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  color: var(--cor-marrom);
+  margin-bottom: var(--espaco-xs);
+}
+
+.experiencia-card__texto {
+  font-size: 0.92rem;
+  color: var(--cor-marrom-claro);
+  line-height: 1.55;
+}
+
+/* Hover só no desktop — leve elevação, igual ao clima dos produtos */
+@media (hover: hover) {
+  .experiencia-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 34px rgba(61, 35, 20, 0.16);
+    border-color: var(--cor-dourado);
+  }
+}
+
+@media (min-width: 600px) {
+  .experiencia__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .experiencia__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ─── Contato ──────────────────────────────────────── */
+.contato {
+  padding: var(--espaco-xl) var(--espaco-md);
+  background: var(--cor-creme);
+}
+
+.contato__inner {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  display: grid;
+  gap: var(--espaco-lg);
+}
+
+.contato__endereco,
+.contato__horario {
+  font-size: 1rem;
+  color: var(--cor-marrom-claro);
+  margin-bottom: var(--espaco-sm);
+}
+
+.contato__whatsapp {
+  display: inline-block;
+  margin-top: var(--espaco-sm);
+  padding: 0.75rem 1.4rem;
+  background: var(--cor-marrom);
+  color: var(--cor-branco);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--raio-pill);
+  transition: background 0.2s;
+}
+
+.contato__whatsapp:hover {
+  background: var(--cor-marrom-claro);
+}
+
+.contato__mapa-iframe {
+  width: 100%;
+  height: 260px;
+  border: 0;
+  border-radius: var(--raio-md);
+  box-shadow: var(--sombra-suave);
+}
+
+@media (min-width: 768px) {
+  .contato__inner {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .contato__mapa-iframe {
+    height: 320px;
+  }
+}
+
+ /*─── Rodapé ───────────────────────────────────────── */
+.footer {
+  text-align: center;
+  padding: var(--espaco-lg) var(--espaco-md);
+  background: var(--cor-preta);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+}
+
+.footer__nome {
+  font-family: var(--fonte-titulo);
+  font-size: 1.1rem;
+  color: var(--cor-dourado);
+  margin-bottom: 0.35rem;
+}
+
+.footer__credito {
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+/* ─── Botão flutuante WhatsApp ─────────────────────── */
+.btn-whatsapp {
+  position: fixed;
+  bottom: var(--espaco-md);
+  right: var(--espaco-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  background: var(--cor-whatsapp);
+  color: var(--cor-branco);
+  border-radius: 50%;
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+  z-index: 100;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.btn-whatsapp svg {
+  width: 30px;
+  height: 30px;
+}
+
+.btn-whatsapp:hover {
+  transform: scale(1.08);
+  filter: brightness(1.05);
+}
+
+/* ─── Animação ao rolar (copiada do projeto de casamento) ── */
+.revelar-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.revelar-scroll.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
