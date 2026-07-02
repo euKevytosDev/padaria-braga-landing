@@ -1,25 +1,24 @@
 /*
   variables.css — "paleta de cores" do site
-  Identidade da Padaria Braga: vermelho da fachada + dourado champagne discreto.
+  Identidade da Padaria Braga: vermelho + creme, clean e elegante (sem dourado).
   Para mudar o visual inteiro, altere só aqui.
 */
 :root {
   /* Cores da marca (nome = cor real) */
-  --cor-vinho: #3d0f10;           /* vinho profundo — rodapé, overlay do hero */
+  --cor-vinho: #3d0f10;           /* vinho profundo — rodapé e overlay do hero */
   --cor-vermelho: #bf2530;        /* vermelho da fachada — cor principal da marca */
-  --cor-vermelho-escuro: #8c1c22; /* vermelho escuro — títulos e destaques */
-  --cor-dourado: #c0a15a;         /* dourado champagne — discreto, elegante */
-  --cor-dourado-claro: #ddc389;   /* dourado claro — brilhos e detalhes finos */
+  --cor-vermelho-escuro: #8c1c22; /* vermelho escuro — títulos, destaques e hovers */
 
-  /* Neutros quentes — leitura fluida */
+  /* Neutros quentes — base clean */
   --cor-creme: #fbf7f1;           /* creme quente — fundos de seção */
   --cor-branco: #ffffff;
   --cor-texto: #33221f;           /* corpo de texto — marrom quente bem escuro */
   --cor-texto-suave: #6b5551;     /* parágrafos/subtítulos — taupe suave, não cansa */
   --cor-texto-claro: rgba(255, 249, 243, 0.94);
 
-  /* Detalhe dourado sutil para bordas */
-  --cor-dourado-borda: rgba(192, 161, 90, 0.32);
+  /* Detalhes finos */
+  --cor-borda: rgba(61, 15, 16, 0.1);   /* borda neutra sutil */
+  --cor-estrela-vazia: #e5dcd7;         /* estrela vazia (cinza quente) */
 
   /* WhatsApp (padrão do app) */
   --cor-whatsapp: #25d366;

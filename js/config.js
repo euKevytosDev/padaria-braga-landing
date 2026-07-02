@@ -101,7 +101,7 @@ const PADARIA = {
       nome: "Juliana Ferreira",
       quando: "há 2 meses",
       nota: 5,
-      cor: "#1a73e8",
+      cor: "#7a5551",
       texto: "Ambiente aconchegante pra tomar um café da manhã. Virou parada obrigatória toda semana!",
     },
   ],

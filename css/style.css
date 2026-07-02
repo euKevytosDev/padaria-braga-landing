@@ -24,8 +24,8 @@ body {
   top: 0;
   z-index: 50;
   background: var(--cor-creme);
-  border-top: 3px solid var(--cor-dourado);
-  border-bottom: 1px solid var(--cor-dourado-borda);
+  border-top: 3px solid var(--cor-vermelho);
+  border-bottom: 1px solid var(--cor-borda);
   box-shadow: 0 2px 12px rgba(58, 12, 14, 0.06);
 }
 
@@ -105,8 +105,8 @@ body {
 
 .header__link:hover,
 .header__link--ativo {
-  color: var(--cor-dourado);
-  border-bottom-color: var(--cor-dourado);
+  color: var(--cor-vermelho);
+  border-bottom-color: var(--cor-vermelho);
 }
 
 .header__logo {
@@ -225,7 +225,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--cor-dourado-claro);
+  color: rgba(255, 245, 242, 0.72);
   margin-bottom: var(--espaco-xs);
 }
 
@@ -245,15 +245,15 @@ body {
   opacity: 0.9;
 }
 
-/* Botão dourado do hero */
+/* Botão principal do hero */
 .hero__cta {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
   align-self: flex-start;
   padding: 0.85rem 1.5rem;
-  background: var(--cor-dourado);
-  color: var(--cor-vinho);
+  background: var(--cor-vermelho);
+  color: var(--cor-branco);
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -299,8 +299,8 @@ body {
 /* ─── Barra de categorias ──────────────────────────── */
 .categorias {
   background: linear-gradient(180deg, var(--cor-vermelho), var(--cor-vermelho-escuro));
-  border-top: 1px solid var(--cor-dourado);
-  border-bottom: 1px solid var(--cor-dourado);
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   padding: var(--espaco-sm) 0;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -343,7 +343,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--cor-dourado);
+  color: var(--cor-vermelho);
   margin-bottom: var(--espaco-xs);
 }
 
@@ -390,7 +390,7 @@ body {
   padding: var(--espaco-lg);
   background: var(--cor-creme);
   border-radius: var(--raio-md);
-  border: 1px solid var(--cor-dourado-borda);
+  border: 1px solid var(--cor-borda);
 }
 
 .sobre__logo {
@@ -407,7 +407,7 @@ body {
   width: 100%;
 }
 
-/* Cada item é uma "pílula" branca com ícone em círculo dourado */
+/* Cada item é uma "pílula" branca com ícone em círculo vermelho */
 .sobre__item {
   display: flex;
   align-items: center;
@@ -510,7 +510,7 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
-  background: linear-gradient(145deg, var(--cor-dourado-claro), var(--cor-vermelho-escuro));
+  background: linear-gradient(145deg, var(--cor-vermelho), var(--cor-vermelho-escuro));
 }
 
 /* Fallback quando a imagem ainda não existe */
@@ -540,7 +540,7 @@ body {
   }
 
   .produto-card:hover .produto-card__nome {
-    color: var(--cor-dourado);
+    color: var(--cor-vermelho-escuro);
   }
 }
 
@@ -579,7 +579,7 @@ body {
   text-align: center;
   padding: var(--espaco-lg) var(--espaco-md);
   background: var(--cor-creme);
-  border: 1px solid var(--cor-dourado-borda);
+  border: 1px solid var(--cor-borda);
   border-radius: var(--raio-md);
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
@@ -615,7 +615,7 @@ body {
   .experiencia-card:hover {
     transform: translateY(-6px);
     box-shadow: var(--sombra-media);
-    border-color: var(--cor-dourado);
+    border-color: var(--cor-vermelho);
   }
 }
 
@@ -709,7 +709,7 @@ body {
   margin: 0 auto var(--espaco-lg);
   padding: var(--espaco-md) var(--espaco-lg);
   background: var(--cor-creme);
-  border: 1px solid var(--cor-dourado-borda);
+  border: 1px solid var(--cor-borda);
   border-radius: var(--raio-md);
   box-shadow: var(--sombra-suave);
 }
@@ -728,7 +728,7 @@ body {
   gap: 0.25rem;
 }
 
-/* Barra de estrelas: base cinza + preenchimento dourado por cima (largura via JS) */
+/* Barra de estrelas: base cinza + preenchimento vermelho por cima (largura via JS) */
 .avaliacoes__estrelas-resumo {
   position: relative;
   display: inline-block;
@@ -738,7 +738,7 @@ body {
 }
 
 .avaliacoes__estrelas-base {
-  color: #dcd3c7;
+  color: var(--cor-estrela-vazia);
 }
 
 .avaliacoes__estrelas-preenchidas {
@@ -748,7 +748,7 @@ body {
   width: 88%;
   overflow: hidden;
   white-space: nowrap;
-  color: #f5b400;
+  color: var(--cor-vermelho);
 }
 
 .avaliacoes__total {
@@ -787,7 +787,7 @@ body {
   gap: var(--espaco-sm);
   padding: var(--espaco-lg);
   background: var(--cor-creme);
-  border: 1px solid var(--cor-dourado-borda);
+  border: 1px solid var(--cor-borda);
   border-radius: var(--raio-md);
   box-shadow: var(--sombra-suave);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
@@ -871,7 +871,7 @@ body {
 .avaliacao-card__estrelas {
   display: flex;
   gap: 2px;
-  color: #f5b400;
+  color: var(--cor-vermelho);
 }
 
 .avaliacao-card__estrela {
@@ -904,13 +904,13 @@ body {
   background: var(--cor-vinho);
   color: var(--cor-texto-claro);
   font-size: 0.85rem;
-  border-top: 3px solid var(--cor-dourado);
+  border-top: 3px solid var(--cor-vermelho);
 }
 
 .footer__nome {
   font-family: var(--fonte-titulo);
   font-size: 1.1rem;
-  color: var(--cor-dourado);
+  color: var(--cor-creme);
   margin-bottom: 0.35rem;
 }
 
