@@ -72,4 +72,29 @@ const PADARIA = {
       texto: "Um cantinho relaxante e descontraído para uma pausa no meio da correria.",
     },
   ],
+
+  // Avaliações estilo Google (fotos realistas via randomuser.me — trocar por reais depois)
+  avaliacoes: [
+    {
+      nome: "Mariana Alves",
+      foto: "https://randomuser.me/api/portraits/women/68.jpg",
+      nota: 5,
+      quando: "há 1 semanas",
+      texto: "Melhor pão francês do bairro industrial! Sempre quentinho e crocante. O atendimento é super simpático, virei cliente fiel.",
+    },
+    {
+      nome: "Carlos Eduardo",
+      foto: "https://randomuser.me/api/portraits/men/32.jpg",
+      nota: 5,
+      quando: "há 1 mês",
+      texto: "Ótima variedade de salgados e bolos, tudo fresquinho e com preço justo. Recomendo demais a Padaria Braga!",
+    },
+    {
+      nome: "Juliana Ferreira",
+      foto: "https://randomuser.me/api/portraits/women/44.jpg",
+      nota: 5,
+      quando: "há 3 meses",
+      texto: "Ambiente aconchegante pra tomar um café da manhã. Virou parada obrigatória toda semana. Nota mil!",
+    },
+  ],
 };
