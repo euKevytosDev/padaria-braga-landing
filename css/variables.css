@@ -5,9 +5,9 @@
 */
 :root {
   /* Cores da marca (mesmos nomes de sempre — só mudam os valores) */
-  --cor-preta: #2a0d0d;        /* vinho bem escuro — rodapé e textos sobre dourado */
-  --cor-marrom: #c1272d;       /* vermelho da fachada — cor principal da marca */
-  --cor-marrom-claro: #8f2020; /* vermelho escuro — títulos e textos de destaque */
+  --cor-preta: #2a0d0d;           /* vinho bem escuro — rodapé e textos sobre dourado */
+  --cor-vermelho: #c1272d;        /* vermelho da fachada — cor principal da marca */
+  --cor-vermelho-escuro: #8f2020; /* vermelho escuro — títulos e textos de destaque */
   --cor-dourado: #d99a2b;      /* dourado do logo */
   --cor-dourado-claro: #ecc158;
   --cor-creme: #fbf6ef;

@@ -63,7 +63,7 @@ function preencherConteudo() {
   preencherExperiencias();
 }
 
-// ─── Cria os chips de categoria na barra marrom ───────
+// ─── Cria os chips de categoria na barra vermelha ─────
 function preencherCategorias() {
   const lista = document.getElementById("lista-categorias");
   if (!lista) return;
