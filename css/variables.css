@@ -1,22 +1,25 @@
 /*
   variables.css — "paleta de cores" do site
-  Identidade da Padaria Braga: vermelho da fachada + dourado do logo.
+  Identidade da Padaria Braga: vermelho da fachada + dourado champagne discreto.
   Para mudar o visual inteiro, altere só aqui.
 */
 :root {
   /* Cores da marca (nome = cor real) */
-  --cor-vinho: #3a0c0e;           /* vinho profundo — rodapé, overlay do hero, texto sobre dourado */
-  --cor-vermelho: #c1272d;        /* vermelho da fachada — cor principal da marca */
-  --cor-vermelho-escuro: #8f1d22; /* vermelho escuro — títulos, destaques e hovers */
-  --cor-dourado: #c8912f;         /* dourado do logo */
-  --cor-dourado-claro: #e6b84f;   /* dourado claro — brilhos e detalhes */
-  --cor-creme: #fbf6ee;           /* creme quente — fundos de seção */
-  --cor-branco: #ffffff;
-  --cor-texto: #2c1512;           /* marrom-avermelhado bem escuro — corpo de texto */
-  --cor-texto-claro: rgba(255, 248, 240, 0.92);
+  --cor-vinho: #3d0f10;           /* vinho profundo — rodapé, overlay do hero */
+  --cor-vermelho: #bf2530;        /* vermelho da fachada — cor principal da marca */
+  --cor-vermelho-escuro: #8c1c22; /* vermelho escuro — títulos e destaques */
+  --cor-dourado: #c0a15a;         /* dourado champagne — discreto, elegante */
+  --cor-dourado-claro: #ddc389;   /* dourado claro — brilhos e detalhes finos */
 
-  /* Tons de apoio derivados da marca (para bordas/detalhes sutis) */
-  --cor-dourado-borda: rgba(200, 145, 47, 0.3);
+  /* Neutros quentes — leitura fluida */
+  --cor-creme: #fbf7f1;           /* creme quente — fundos de seção */
+  --cor-branco: #ffffff;
+  --cor-texto: #33221f;           /* corpo de texto — marrom quente bem escuro */
+  --cor-texto-suave: #6b5551;     /* parágrafos/subtítulos — taupe suave, não cansa */
+  --cor-texto-claro: rgba(255, 249, 243, 0.94);
+
+  /* Detalhe dourado sutil para bordas */
+  --cor-dourado-borda: rgba(192, 161, 90, 0.32);
 
   /* WhatsApp (padrão do app) */
   --cor-whatsapp: #25d366;
@@ -32,14 +35,14 @@
   --espaco-lg: 2.5rem;
   --espaco-xl: 4rem;
 
-  /* Bordas e sombras — tons vinho/dourado para combinar com a marca */
+  /* Bordas e sombras — tons vinho neutros e suaves */
   --raio-sm: 6px;
-  --raio-md: 12px;
+  --raio-md: 14px;
   --raio-pill: 999px;
-  --sombra-suave: 0 6px 22px rgba(58, 12, 14, 0.12);
-  --sombra-media: 0 14px 34px rgba(58, 12, 14, 0.18);
-  --sombra-forte: 0 18px 42px rgba(120, 18, 20, 0.26), 0 8px 20px rgba(200, 145, 47, 0.2);
-  --sombra-botao: 0 8px 24px rgba(200, 145, 47, 0.4);
+  --sombra-suave: 0 6px 22px rgba(61, 15, 16, 0.08);
+  --sombra-media: 0 14px 34px rgba(61, 15, 16, 0.14);
+  --sombra-forte: 0 20px 44px rgba(61, 15, 16, 0.2);
+  --sombra-botao: 0 10px 26px rgba(191, 37, 48, 0.28);
 
   /* Largura máxima do conteúdo em telas grandes */
   --largura-max: 1200px;
