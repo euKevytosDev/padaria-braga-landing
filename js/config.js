@@ -91,8 +91,15 @@ const PADARIA = {
       texto: "Melhor pão francês do bairro Industrial! Sempre quentinho e crocante. Amo demais!",
     },
     {
-      nome: "Juliana Ferreira",
+      nome: "Carlos Eduardo",
+      foto: "https://randomuser.me/api/portraits/men/32.jpg",
       quando: "há 1 mês",
+      nota: 5,
+      texto: "Ótima variedade de salgados e bolos, preço justo. Recomendo demais a Padaria Braga!",
+    },
+    {
+      nome: "Juliana Ferreira",
+      quando: "há 2 meses",
       nota: 5,
       cor: "#1a73e8",
       texto: "Ambiente aconchegante pra tomar um café da manhã. Virou parada obrigatória toda semana!",
