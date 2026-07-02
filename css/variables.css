@@ -1,19 +1,22 @@
 /*
   variables.css — "paleta de cores" do site
-  Inspirado na fachada da Padaria Braga: vermelho, dourado e branco.
+  Identidade da Padaria Braga: vermelho da fachada + dourado do logo.
   Para mudar o visual inteiro, altere só aqui.
 */
 :root {
-  /* Cores da marca (mesmos nomes de sempre — só mudam os valores) */
-  --cor-preta: #2a0d0d;           /* vinho bem escuro — rodapé e textos sobre dourado */
+  /* Cores da marca (nome = cor real) */
+  --cor-vinho: #3a0c0e;           /* vinho profundo — rodapé, overlay do hero, texto sobre dourado */
   --cor-vermelho: #c1272d;        /* vermelho da fachada — cor principal da marca */
-  --cor-vermelho-escuro: #8f2020; /* vermelho escuro — títulos e textos de destaque */
-  --cor-dourado: #d99a2b;      /* dourado do logo */
-  --cor-dourado-claro: #ecc158;
-  --cor-creme: #fbf6ef;
+  --cor-vermelho-escuro: #8f1d22; /* vermelho escuro — títulos, destaques e hovers */
+  --cor-dourado: #c8912f;         /* dourado do logo */
+  --cor-dourado-claro: #e6b84f;   /* dourado claro — brilhos e detalhes */
+  --cor-creme: #fbf6ee;           /* creme quente — fundos de seção */
   --cor-branco: #ffffff;
-  --cor-texto: #2b2118;
-  --cor-texto-claro: rgba(255, 255, 255, 0.92);
+  --cor-texto: #2c1512;           /* marrom-avermelhado bem escuro — corpo de texto */
+  --cor-texto-claro: rgba(255, 248, 240, 0.92);
+
+  /* Tons de apoio derivados da marca (para bordas/detalhes sutis) */
+  --cor-dourado-borda: rgba(200, 145, 47, 0.3);
 
   /* WhatsApp (padrão do app) */
   --cor-whatsapp: #25d366;
@@ -29,12 +32,14 @@
   --espaco-lg: 2.5rem;
   --espaco-xl: 4rem;
 
-  /* Bordas e sombras */
+  /* Bordas e sombras — tons vinho/dourado para combinar com a marca */
   --raio-sm: 6px;
   --raio-md: 12px;
   --raio-pill: 999px;
-  --sombra-suave: 0 4px 20px rgba(0, 0, 0, 0.15);
-  --sombra-botao: 0 6px 24px rgba(212, 160, 60, 0.35);
+  --sombra-suave: 0 6px 22px rgba(58, 12, 14, 0.12);
+  --sombra-media: 0 14px 34px rgba(58, 12, 14, 0.18);
+  --sombra-forte: 0 18px 42px rgba(120, 18, 20, 0.26), 0 8px 20px rgba(200, 145, 47, 0.2);
+  --sombra-botao: 0 8px 24px rgba(200, 145, 47, 0.4);
 
   /* Largura máxima do conteúdo em telas grandes */
   --largura-max: 1200px;
