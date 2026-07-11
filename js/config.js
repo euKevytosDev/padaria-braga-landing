@@ -7,7 +7,7 @@ const PADARIA = {
   slogan: "O sabor que é tradição no bairro Industrial",
 
   heroImagem:
-    "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600&q=85",
+    "https://images.unsplash.com/photo-1579613832125-5dfe59436e04?w=1600&q=85",
   heroImagemSecundaria:
     "https://images.unsplash.com/photo-1608198093002-4d4e5e633610?w=800&q=85",
 
