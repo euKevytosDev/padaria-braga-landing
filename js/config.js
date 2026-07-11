@@ -1,93 +1,101 @@
 /*
-  config.js — dados da padaria em um só lugar.
-  Quando o dono pedir mudança de telefone ou horário, edite só este arquivo.
+  config.js — dados da Padaria Braga
+  Edite aqui textos, imagens, WhatsApp e horários.
 */
 const PADARIA = {
   nome: "Padaria Braga",
   slogan: "O sabor que é tradição no bairro Industrial",
 
-  // Foto do banner principal — troque pela foto real da padaria depois
   heroImagem:
-    "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1400&q=80",
+    "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600&q=85",
+  heroImagemSecundaria:
+    "https://images.unsplash.com/photo-1608198093002-4d4e5e633610?w=800&q=85",
 
-  // Apenas números: DDD + telefone.
-  // ATENÇÃO: (31) 3361-3369 é o telefone fixo do letreiro — CONFIRMAR o WhatsApp real antes de publicar.
-  whatsapp: "313361 3369".replace(/\s/g, ""),
-
+  whatsapp: "3133613369",
   mensagemPadrao:
     "Olá! Vi o site da Padaria Braga e gostaria de mais informações.",
 
-  // Textos genéricos — substitua quando tiver a história real
   sobre:
-    "Referência no bairro Industrial, a Padaria Braga prepara diariamente " +
-    "pães fresquinhos, bolos, salgados e doces com ingredientes selecionados " +
-    "e o carinho de quem atende como vizinho. Passe aqui e sinta o cheiro de " +
-    "pão quentinho saindo do forno.",
+    "Referência no bairro Industrial, a Padaria Braga prepara diariamente pães fresquinhos, bolos, salgados e doces com ingredientes selecionados e o carinho de quem atende como vizinho.",
 
   endereco: "R. José Ferreira Soares, 29 - Industrial, Contagem - MG, 32220-380",
-  horario: "Segunda a sábado, das 6h às 20h · Domingo, das 6h às 12h (confirmar)",
+  horario: "Segunda a sábado, das 6h às 20h · Domingo, das 6h às 12h",
 
-  // Link do Google Maps — busca pelo endereço da Braga (trocar pelo "Incorporar mapa" oficial depois)
   mapsEmbedUrl:
     "https://www.google.com/maps?q=Padaria+e+Confeitaria+Braga+Rua+Jose+Ferreira+Soares+29+Industrial+Contagem+MG&output=embed",
 
-  // Categorias exibidas na barra de destaque
-  categorias: [
-    "Pães",
-    "Bolos",
-    "Salgados",
-    "Doces",
-    "Bebidas",
-    "Cafés",
+  // Números de destaque (seção editorial)
+  stats: [
+    { valor: "4,4", rotulo: "Nota no Google" },
+    { valor: "6h", rotulo: "Abre cedo todo dia" },
+    { valor: "100+", rotulo: "Produtos frescos" },
+    { valor: "468", rotulo: "Avaliações" },
   ],
 
-  // Produtos em destaque (nomes genéricos — troque pelos reais depois)
+  categorias: ["Pães artesanais", "Bolos", "Salgados", "Doces", "Cafés", "Fornada diária"],
+
   produtos: [
-    { nome: "Pão francês", imagem: "https://media.istockphoto.com/id/1162195490/pt/foto/fresh-bread-rolls.jpg?s=612x612&w=0&k=20&c=ZUI-YCFuRjEQBeODcZ8MlQy82d2oxicqHcqRKX8JyS4=" },
-    { nome: "Bolo caseiro", imagem: "https://media.istockphoto.com/id/1313708565/pt/foto/carrot-cake-with-chocolate-icing-brazilian-cake.jpg?s=612x612&w=0&k=20&c=3l-iL0tND-_1wWCCIJ2lU23Pw5dFLc8gF8glJ4nwVrI=" },
-    { nome: "Croissant", imagem: "https://media.istockphoto.com/id/1433860471/pt/foto/mini-crescent.jpg?s=612x612&w=0&k=20&c=EwYmDM8LOxSqe3VLSKU5mQ0qrLUctc2MDRG0-J3H65g=" },
-    { nome: "Sonho", imagem: "https://media.istockphoto.com/id/460936857/pt/foto/sonho-brasileira.jpg?s=612x612&w=0&k=20&c=ajK-t0QNlHjEmAyu0SnY1P2efiqKEKPmGL6Ez4wdZ3g=" },
+    {
+      nome: "Pão francês",
+      descricao: "Crocante por fora, macio por dentro — saindo do forno o dia todo.",
+      imagem: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=900&q=85",
+      destaque: true,
+    },
+    {
+      nome: "Bolo caseiro",
+      descricao: "Receitas clássicas, fatia generosa.",
+      imagem: "https://images.unsplash.com/photo-1578985545069-69928b1d9587?w=700&q=85",
+    },
+    {
+      nome: "Croissant",
+      descricao: "Folhado dourado, manteiga na medida.",
+      imagem: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=700&q=85",
+    },
+    {
+      nome: "Sonho",
+      descricao: "Recheio cremoso, açúcar cristal.",
+      imagem: "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=700&q=85",
+    },
   ],
 
-  // Experiência na padaria — textos genéricos, ajuste quando conhecer a rotina real
   experiencias: [
     {
-      icone: "☕",
+      numero: "01",
       titulo: "Café quentinho",
-      texto: "Comece o dia com um café passado na hora, do jeitinho que você gosta.",
+      texto: "Passado na hora, do jeitinho que você gosta.",
     },
     {
-      icone: "🍳",
-      titulo: "Pão com ovo na hora",
-      texto: "Feito na chapa quando você pede — sequinho no ponto certo.",
+      numero: "02",
+      titulo: "Pão com ovo",
+      texto: "Feito na chapa quando você pede.",
     },
     {
-      icone: "🥖",
-      titulo: "Fornada o dia todo",
-      texto: "Pães saindo do forno ao longo do dia, sempre crocantes e cheirosos.",
+      numero: "03",
+      titulo: "Fornada contínua",
+      texto: "Pães saindo do forno ao longo do dia.",
     },
     {
-      icone: "🪑",
-      titulo: "Lugar Aconchegante",
-      texto: "Um cantinho relaxante e descontraído para uma pausa no meio da correria.",
+      numero: "04",
+      titulo: "Ambiente acolhedor",
+      texto: "Mesinhas pra pausa no meio da correria.",
     },
   ],
 
-  // Resumo da nota (estilo Google) exibido no topo da seção de avaliações
+  craftImagem:
+    "https://images.unsplash.com/photo-1486427944689-5ec544958a5f?w=1600&q=85",
+
   avaliacaoResumo: {
     nota: "4,4",
     notaDecimal: 4.4,
     total: 468,
   },
 
-  // Avaliações de clientes (estilo Google).
-  // Sem "foto" => mostra a inicial do nome num círculo colorido (avatar de letra).
   avaliacoes: [
     {
       nome: "Mariana Alves",
       quando: "há 2 semanas",
       nota: 5,
-      cor: "#c1272d",
+      cor: "#bf2530",
       texto: "Melhor pão francês do bairro Industrial! Sempre quentinho e crocante. Amo demais!",
     },
     {
@@ -101,7 +109,7 @@ const PADARIA = {
       nome: "Juliana Ferreira",
       quando: "há 2 meses",
       nota: 5,
-      cor: "#7a5551",
+      cor: "#5c4038",
       texto: "Ambiente aconchegante pra tomar um café da manhã. Virou parada obrigatória toda semana!",
     },
   ],

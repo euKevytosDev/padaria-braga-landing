@@ -1,48 +1,53 @@
 /*
-  variables.css — "paleta de cores" do site
-  Identidade da Padaria Braga: vermelho + creme, clean e elegante (sem dourado).
-  Para mudar o visual inteiro, altere só aqui.
+  Design tokens — Padaria Braga (editorial premium)
 */
 :root {
-  /* Cores da marca (nome = cor real) */
-  --cor-vinho: #3d0f10;           /* vinho profundo — rodapé e overlay do hero */
-  --cor-vermelho: #bf2530;        /* vermelho da fachada — cor principal da marca */
-  --cor-vermelho-escuro: #8c1c22; /* vermelho escuro — títulos, destaques e hovers */
+  /* Marca */
+  --vermelho: #c41e2a;
+  --vermelho-escuro: #9a1822;
+  --vermelho-suave: rgba(196, 30, 42, 0.08);
 
-  /* Neutros quentes — base clean */
-  --cor-creme: #fbf7f1;           /* creme quente — fundos de seção */
-  --cor-branco: #ffffff;
-  --cor-texto: #33221f;           /* corpo de texto — marrom quente bem escuro */
-  --cor-texto-suave: #6b5551;     /* parágrafos/subtítulos — taupe suave, não cansa */
-  --cor-texto-claro: rgba(255, 249, 243, 0.94);
+  /* Neutros */
+  --carvao: #1a1210;
+  --carvao-suave: #2d2420;
+  --marrom: #4a3a35;
+  --taupe: #7a6a64;
+  --ivory: #faf8f5;
+  --branco: #ffffff;
+  --linha: rgba(26, 18, 16, 0.08);
 
-  /* Detalhes finos */
-  --cor-borda: rgba(61, 15, 16, 0.1);   /* borda neutra sutil */
-  --cor-estrela-vazia: #e5dcd7;         /* estrela vazia (cinza quente) */
+  /* Texto */
+  --texto: #1a1210;
+  --texto-suave: #6b5c56;
+  --texto-claro: rgba(255, 252, 250, 0.92);
 
-  /* WhatsApp (padrão do app) */
-  --cor-whatsapp: #25d366;
+  /* WhatsApp */
+  --whatsapp: #25d366;
 
-  /* Fontes — mesma ideia do site de casamento (Google Fonts) */
-  --fonte-titulo: "Playfair Display", Georgia, serif;
-  --fonte-texto: "Montserrat", system-ui, sans-serif;
+  /* Tipografia */
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-body: "Outfit", system-ui, sans-serif;
 
-  /* Espaçamentos reutilizáveis */
-  --espaco-xs: 0.5rem;
-  --espaco-sm: 1rem;
-  --espaco-md: 1.5rem;
-  --espaco-lg: 2.5rem;
-  --espaco-xl: 4rem;
+  /* Espaço */
+  --xs: 0.5rem;
+  --sm: 1rem;
+  --md: 1.5rem;
+  --lg: 2.5rem;
+  --xl: 4rem;
+  --2xl: 6rem;
 
-  /* Bordas e sombras — tons vinho neutros e suaves */
-  --raio-sm: 6px;
-  --raio-md: 14px;
-  --raio-pill: 999px;
-  --sombra-suave: 0 6px 22px rgba(61, 15, 16, 0.08);
-  --sombra-media: 0 14px 34px rgba(61, 15, 16, 0.14);
-  --sombra-forte: 0 20px 44px rgba(61, 15, 16, 0.2);
-  --sombra-botao: 0 10px 26px rgba(191, 37, 48, 0.28);
+  /* Forma */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
 
-  /* Largura máxima do conteúdo em telas grandes */
-  --largura-max: 1200px;
+  /* Sombra */
+  --shadow-sm: 0 4px 20px rgba(26, 18, 16, 0.06);
+  --shadow-md: 0 12px 40px rgba(26, 18, 16, 0.1);
+  --shadow-lg: 0 24px 60px rgba(26, 18, 16, 0.14);
+  --shadow-red: 0 16px 40px rgba(196, 30, 42, 0.25);
+
+  --max: 1240px;
+  --header-h: 72px;
 }
