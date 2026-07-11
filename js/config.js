@@ -7,9 +7,9 @@ const PADARIA = {
   slogan: "O sabor que é tradição no bairro Industrial",
 
   heroImagem:
-    "https://images.unsplash.com/photo-1579613832125-5dfe59436e04?w=1600&q=85",
+    "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1600&q=85",
   heroImagemSecundaria:
-    "https://images.unsplash.com/photo-1608198093002-4d4e5e633610?w=800&q=85",
+    "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=800&q=85",
 
   whatsapp: "3133613369",
   mensagemPadrao:
@@ -44,7 +44,7 @@ const PADARIA = {
     {
       nome: "Bolo caseiro",
       descricao: "Receitas clássicas, fatia generosa.",
-      imagem: "https://images.unsplash.com/photo-1578985545069-69928b1d9587?w=700&q=85",
+      imagem: "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=700&q=85",
     },
     {
       nome: "Croissant",
@@ -82,7 +82,7 @@ const PADARIA = {
   ],
 
   craftImagem:
-    "https://images.unsplash.com/photo-1486427944689-5ec544958a5f?w=1600&q=85",
+    "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=1600&q=85",
 
   avaliacaoResumo: {
     nota: "4,4",
